@@ -1,0 +1,16 @@
+.wrapper {
+  flex: 1;
+  width: '100%';
+}
+
+.button {
+  height: 80px;
+  border-radius: 40px;
+  width: 100%;
+}
+
+.primary-button {
+  background-color: blue;
+}
+
+.outline-button {}
