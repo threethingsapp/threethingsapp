@@ -20,7 +20,7 @@ const SignIn = ({}: Props): JSX.Element => {
         />
       </div>
 
-      <Heading variant="v100" style={{ width: '320px', marginBottom: '120px' }}>The only productivity app you need</Heading>
+      <Heading variant="v100" style={{ maxWidth: '320px', marginBottom: '80px' }}>The only productivity app you need</Heading>
 
       <Button title="Sign in with Email" theme="primary" style={{ margin: '18px 0' }} />
 
@@ -29,7 +29,7 @@ const SignIn = ({}: Props): JSX.Element => {
         <Button style={{ flex: 1 }} title="Apple ID" />
       </div>
 
-      <p style={{ textAlign: 'center', marginTop: '8px', color: '#a8a8a8' }}>By Continuing you agree to the Terms and Condition</p>
+      <p style={{ textAlign: 'center', marginTop: '18px', color: '#a8a8a8' }}>By Continuing you agree to the Terms and Condition</p>
     </Layout>
   );
 };

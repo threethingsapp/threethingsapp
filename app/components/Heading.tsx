@@ -6,7 +6,7 @@ type Props = {
 };
 
 const VARIANTS = {
-  'v100': { fontSize: '48px', fontWeight: 'bolder' }
+  'v100': { fontSize: '42px', fontWeight: 'bold' }
 };
 
 const Heading = ({ children, variant, style }: Props): JSX.Element => {
