@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Avatar, Heading } from "..";
+import { Avatar, Heading, Icon } from "..";
 import styles from "./Header.module.css";
 
 type Props = {
@@ -12,14 +11,7 @@ const Header = ({ page }: Props): JSX.Element => {
       <Heading variant="v500">{page}</Heading>
 
       <div className={styles["icons-container"]}>
-        <Image
-          src="/search.svg"
-          alt="search"
-          style={{ margin: "0 auto" }}
-          width={24}
-          height={24}
-          priority
-        />
+        <Icon name="search" />
 
         <Avatar />
       </div>

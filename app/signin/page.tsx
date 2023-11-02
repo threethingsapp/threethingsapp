@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Layout, Heading, Button } from "../components";
+import { Layout, Heading, Button                                                     } from "../components";
 
 type Props = {};
 
