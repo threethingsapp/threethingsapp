@@ -10,7 +10,7 @@ const DEFAULT_IMAGE = "/avatar.svg";
 
 const Avatar = ({ image = DEFAULT_IMAGE }: Props): JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <div>
       <Image
         src={image}
         alt="3d"

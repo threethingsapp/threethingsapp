@@ -1,12 +1,13 @@
 
 type Props = {
   children: string;
-  variant: 'v100';
-  style: Record<string, unknown>;
+  variant: 'v100' | 'v500';
+  style?: Record<string, unknown>;
 };
 
 const VARIANTS = {
-  'v100': { fontSize: '42px', fontWeight: 'bold' }
+  'v100': { fontSize: '42px', fontWeight: 'bold' },
+  'v500': { fontSize: '18px', fontWeight: 'initial' }
 };
 
 const Heading = ({ children, variant, style }: Props): JSX.Element => {
