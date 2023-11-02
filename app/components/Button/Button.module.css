@@ -27,3 +27,8 @@
 .outline-button {
   border: 1px solid #4f4f4f;
 }
+
+.clear-button {
+  border: unset;
+  color: rgb(79, 79, 79);
+}
