@@ -15,6 +15,11 @@
   background-color: unset;
 }
 
+.button--small {
+  height: 32px;
+  border-radius: 16px;
+}
+
 .primary-button {
   background-color: #5391ff;
 }

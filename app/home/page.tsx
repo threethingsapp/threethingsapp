@@ -14,8 +14,8 @@ const Home = ({}: Props): JSX.Element => {
       <Heading variant="v100">{userName}</Heading>
 
       <div className={styles['button-wrapper']}>
-        <Button title="Overview" theme="primary"/>
-        <Button title="Productivity" theme="outline" />
+        <Button size="small" title="Overview" theme="primary"/>
+        <Button size="small" title="Productivity" theme="outline" />
       </div>
     </Layout>
   )
