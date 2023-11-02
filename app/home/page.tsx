@@ -1,4 +1,4 @@
-import { Button, Header, Heading, Layout } from "../components";
+import { Button, Header, Heading, Layout, DailyCard } from "../components";
 import styles from './home.module.css';
 
 type Props = {};
@@ -17,6 +17,8 @@ const Home = ({}: Props): JSX.Element => {
         <Button title="Overview" size="small" theme="primary"/>
         <Button title="Productivity" size="small" theme="clear" />
       </div>
+
+      <DailyCard />
     </Layout>
   )
 };
