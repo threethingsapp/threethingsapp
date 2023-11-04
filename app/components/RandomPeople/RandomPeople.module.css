@@ -1,0 +1,97 @@
+
+.img {
+  --image-size: 232px;
+  --topGap: 14px;
+  --leftGap: 20px;
+
+  background-image: URL('/people.jpg');
+  background-repeat: no-repeat;
+
+  width: var(--image-size);
+  height: var(--image-size);
+  border-radius: 8px;
+}
+
+/* first row */
+.img1 {
+  background-position-x: calc(var(--topGap) * -1);
+  background-position-y: calc(var(--leftGap) * -1);
+}
+
+.img2 {
+  background-position-x: calc((var(--image-size) + (var(--leftGap) * 2)) * -1) ;
+  background-position-y: calc(var(--leftGap) * -1);
+}
+
+.img3 {
+  background-position-x: calc((calc(var(--image-size) * 2) + (var(--leftGap) * 3)) * -1) ;
+  background-position-y: calc(var(--leftGap) * -1);
+}
+
+.img4 {
+  background-position-x: calc((calc(var(--image-size) * 3) + (var(--leftGap) * 4)) * -1) ;
+  background-position-y: calc(var(--leftGap) * -1);
+}
+
+/* second row */
+.img5 {
+  background-position-x: calc(var(--topGap) * -1);
+  background-position-y: calc((var(--image-size) + calc(var(--topGap) * 3)) * -1);
+}
+
+.img6 {
+  background-position-x: calc((var(--image-size) + (var(--leftGap) * 2)) * -1) ;
+  background-position-y: calc((var(--image-size) + calc(var(--topGap) * 3)) * -1);
+}
+
+.img7 {
+  background-position-x: calc((calc(var(--image-size) * 2) + (var(--leftGap) * 3)) * -1) ;
+  background-position-y: calc((var(--image-size) + calc(var(--topGap) * 3)) * -1);
+}
+
+.img8 {
+  background-position-x: calc((calc(var(--image-size) * 3) + (var(--leftGap) * 4)) * -1) ;
+  background-position-y: calc((var(--image-size) + calc(var(--topGap) * 3)) * -1);
+}
+
+/* third row */
+.img9 {
+  background-position-x: calc(var(--topGap) * -1);
+  background-position-y: calc((calc(var(--image-size) * 2) + calc(var(--topGap) * 4.25)) * -1);
+}
+
+.img10 {
+  background-position-x: calc(((var(--image-size)) + (var(--leftGap) * 2)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 2) + calc(var(--topGap) * 4.5)) * -1);
+}
+
+.img11 {
+  background-position-x: calc((calc((var(--image-size)) * 2) + (var(--leftGap) * 3)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 2) + calc(var(--topGap) * 4.5)) * -1);
+}
+
+.img12 {
+  background-position-x: calc((calc((var(--image-size)) * 3) + (var(--leftGap) * 4)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 2) + calc(var(--topGap) * 4.5)) * -1);
+}
+
+/* fourth row */
+.img13 {
+  background-position-x: calc(var(--topGap) * -1);
+  background-position-y: calc((calc(var(--image-size) * 3) + calc(var(--topGap) * 6)) * -1);
+}
+
+.img14 {
+  background-position-x: calc(((var(--image-size)) + (var(--leftGap) * 2)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 3) + calc(var(--topGap) * 6)) * -1);
+}
+
+.img15 {
+  background-position-x: calc((calc((var(--image-size)) * 2) + (var(--leftGap) * 3)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 3) + calc(var(--topGap) * 6)) * -1);
+}
+
+.img16 {
+  background-position-x: calc((calc((var(--image-size)) * 3) + (var(--leftGap) * 4)) * -1) ;
+  background-position-y: calc((calc(var(--image-size) * 3) + calc(var(--topGap) * 6)) * -1);
+}
