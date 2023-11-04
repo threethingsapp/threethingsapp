@@ -6,3 +6,4 @@ export * from './Header';
 export * from './Heading';
 export * from './Icon';
 export * from './Layout';
+export * from './ProgressBar';
