@@ -1,15 +1,21 @@
-
 .img {
-  --image-size: 232px;
-  --topGap: 14px;
-  --leftGap: 20px;
+  --multiplier: 8;
+
+  --image-size: calc(232px / var(--multiplier));
+  --topGap: calc(14px / var(--multiplier));
+  --leftGap: calc(18px / var(--multiplier));
+  --bgSize: calc(1024px / var(--multiplier));
 
   background-image: URL('/people.jpg');
   background-repeat: no-repeat;
 
   width: var(--image-size);
   height: var(--image-size);
-  border-radius: 8px;
+  border-radius: 50%;
+
+  background-size: var(--bgSize) var(--bgSize);
+
+  border: 2px solid rgb(51, 51, 51);
 }
 
 /* first row */

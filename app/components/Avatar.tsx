@@ -1,14 +1,13 @@
 import Image from "next/image";
 
 type Props = {
-  image?: string;
+  image?: string | undefined;
+  className?: string;
 };
-
-// const wrapperStyle = css({})
 
 const DEFAULT_IMAGE = "/avatar.svg";
 
-const Avatar = ({ image = DEFAULT_IMAGE }: Props): JSX.Element => {
+const Avatar = ({ image = DEFAULT_IMAGE, className }: Props): JSX.Element => {
   return (
     <div>
       <Image
@@ -18,6 +17,7 @@ const Avatar = ({ image = DEFAULT_IMAGE }: Props): JSX.Element => {
         width={32}
         height={32}
         priority
+        className={className}
       />
     </div>
   );
