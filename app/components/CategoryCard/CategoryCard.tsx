@@ -1,20 +1,31 @@
-import { Button, Container, Heading, Icon, ProgressBar } from "..";
+import css from "classnames";
+import { Container, Heading, Icon, ProgressBar } from "..";
 import { RandomPeople } from "../RandomPeople/RandomPeople";
 import styles from "./CategoryCard.module.css";
 
 type Props = {
   icon?: string;
   color?: string;
-  category?: string;
-  completed?: number;
-  total?: number;
+  category: 'books' | 'email' | 'work' | 'urgent';
+  tasks: Record<'total' | 'completed', number>
 };
 
-const CategoryCard = ({ category, completed, total }: Props): JSX.Element => {
+const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
+  const average = Math.ceil(tasks.completed / tasks.total * 100);
+  const isCompleted = tasks.completed === tasks.total;
+
   return (
     <Container className={styles.wrapper}>
       <div className={styles["header-container"]}>
-        <Icon name="search" />
+        <div className={css(styles['colored-till'], { 
+          [styles['books-colored-till']]: category === 'books',
+          [styles['work-colored-till']]: category === 'work',
+          [styles['urgent-colored-till']]: category === 'urgent',
+          [styles['email-colored-till']]: category === 'email',
+        })}>
+          <Icon name={category} width={14} height={14} />
+        </div>
+
 
         <div className={styles["avatars-container"]}>
           <RandomPeople style={{ transform: "translateX(40%)", zIndex: 2 }} />
@@ -23,14 +34,22 @@ const CategoryCard = ({ category, completed, total }: Props): JSX.Element => {
       </div>
 
       <div>
-        <small>5 News</small>
-        <Heading variant="v500">{category!}</Heading>
+        <small>{tasks.total - tasks.completed} News</small>
+        <Heading style={{ textDecoration: 'capitalize' }} variant="v500">{category}</Heading>
       </div>
 
       <div className={styles.footer}>
-        <ProgressBar progress={89} className={styles['progress-bar']} />
+        <ProgressBar progress={isCompleted ? 100 : average} className={styles['progress-bar']} color={color} />
 
-        <span>{completed || 0} / {total || 0}</span>
+        <div className={css(styles['colored-till'], { 
+          [styles['books-colored-till']]: category === 'books',
+          [styles['work-colored-till']]: category === 'work',
+          [styles['urgent-colored-till']]: category === 'urgent',
+          [styles['email-colored-till']]: category === 'email',
+        })}>
+          <small className={styles.footer__percentage}>{tasks.completed} / {tasks.total}</small>
+        </div>
+
       </div>
     </Container>
   );

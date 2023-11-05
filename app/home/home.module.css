@@ -23,8 +23,8 @@
 }
 
 .category-container {
-  margin-top: 12px;
+  margin: 12px 12px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 22px;
 }

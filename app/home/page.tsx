@@ -30,10 +30,10 @@ const Home = ({}: Props): JSX.Element => {
       </Heading>
 
       <div className={styles['category-container']}>
-        <CategoryCard category="Books" />
-        <CategoryCard category="Email" />
-        <CategoryCard category="Work" />
-        <CategoryCard category="Urgent" />
+        <CategoryCard color="rgb(30, 144, 255)" category="books" tasks={{ completed: 1, total: 2 }} />
+        <CategoryCard color="rgb(255, 171, 30)" category="email" tasks={{ completed: 3, total: 10 }} />
+        <CategoryCard color="rgb(188, 98, 255)" category="work" tasks={{ completed: 4, total: 4 }} />
+        <CategoryCard color="rgb(127, 255, 98)" category="urgent" tasks={{ completed: 9, total: 18 }} />
       </div>
     </Layout>
   );
