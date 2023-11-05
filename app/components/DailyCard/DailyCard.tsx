@@ -1,14 +1,15 @@
-import Image from 'next/image';
+import css from "classnames";
 import { Container, Heading, ProgressBar } from "..";
 import { RandomPeople } from "../RandomPeople/RandomPeople";
 import styles from "./DailyCard.module.css";
-import css from 'classnames';
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
-const DailyCard = ({}: Props): JSX.Element => {
+const DailyCard = ({ className }: Props): JSX.Element => {
   return (
-    <Container height={120} className={styles.wrapper}>
+    <Container height={120} className={css(styles.wrapper, className)}>
       <div className={styles['header-container']}>
         <Heading variant="v500">Daily progress</Heading>
 
