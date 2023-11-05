@@ -1,6 +1,7 @@
 export * from './Avatar';
 export * from './Button';
 export * from './Container';
+export * from './CategoryCard';
 export * from './DailyCard';
 export * from './Header';
 export * from './Heading';

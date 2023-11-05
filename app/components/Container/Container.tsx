@@ -2,7 +2,7 @@ import css from 'classnames';
 import styles from './Container.module.css';
 
 type Props = {
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   height?: number;
   className?: string;
   style?: Record<string, string | number>;

@@ -1,12 +1,14 @@
+import css from 'classnames';
 import styles from './ProgressBar.module.css';
 
 type Props = {
   progress: number;
+  className?: string;
 };
 
-const ProgressBar = ({ progress }: Props): JSX.Element => {
+const ProgressBar = ({ className, progress }: Props): JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <div className={css(styles.wrapper, className)}>
       <p>{progress} %</p>
 
       <div className={styles['bar-container']}>

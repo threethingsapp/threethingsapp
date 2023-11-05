@@ -3,9 +3,8 @@
 }
 
 .card {
-  position: absolute;
+  position: relative;
   width: 424px;
-  z-index: 3;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
@@ -15,10 +14,17 @@
 
 .second-card {
   z-index: 2;
-  transform: translateY(10px) scale(.95);
+  transform: translateY(-110px) scale(.95);
 }
 
 .third-card {
   z-index: 1;
-  transform: translateY(20px) scale(.85);
+  transform: translateY(-220px) scale(.85);
+}
+
+.category-container {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }

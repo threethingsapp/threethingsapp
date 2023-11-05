@@ -10,16 +10,13 @@ type Props = {
 
 const Icon = ({ name }: Props): JSX.Element => {
   return (
-    <>
-      <Image
-        src={IconsMap[name]}
-        alt="search"
-        style={{ margin: "0 auto" }}
-        width={24}
-        height={24}
-        priority
-      />
-    </>
+    <Image
+      src={IconsMap[name]}
+      alt="search"
+      width={24}
+      height={24}
+      priority
+    />
   );
 };
 

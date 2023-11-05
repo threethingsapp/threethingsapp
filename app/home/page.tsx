@@ -1,5 +1,5 @@
 import css from "classnames";
-import { Button, Header, Heading, Layout, DailyCard } from "../components";
+import { Button, Header, Heading, Layout, DailyCard, CategoryCard } from "../components";
 import styles from "./home.module.css";
 
 type Props = {};
@@ -19,9 +19,22 @@ const Home = ({}: Props): JSX.Element => {
         <Button title="Productivity" size="small" theme="clear" />
       </div>
 
-      <DailyCard className={css(styles.card, styles['first-card'])} />
-      <DailyCard className={css(styles.card, styles['second-card'])} />
-      <DailyCard className={css(styles.card, styles['third-card'])} />
+      <div style={{ height: '140px' }}>
+        <DailyCard className={css(styles.card, styles['first-card'])} />
+        <DailyCard className={css(styles.card, styles['second-card'])} />
+        <DailyCard className={css(styles.card, styles['third-card'])} />
+      </div>
+
+      <Heading variant="v500">
+        Categories
+      </Heading>
+
+      <div className={styles['category-container']}>
+        <CategoryCard category="Books" />
+        <CategoryCard category="Email" />
+        <CategoryCard category="Work" />
+        <CategoryCard category="Urgent" />
+      </div>
     </Layout>
   );
 };

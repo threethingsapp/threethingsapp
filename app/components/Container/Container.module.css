@@ -2,6 +2,6 @@
   border-radius: 12px;
   background-color: rgb(51, 51, 51);
 
-  width: 100%;
+  min-width: 80px;
   min-height: 80px;
 }
