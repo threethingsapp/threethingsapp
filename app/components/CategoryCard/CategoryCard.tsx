@@ -1,7 +1,15 @@
 import css from "classnames";
-import { Container, Heading, Icon, ProgressBar } from "..";
+import { Container, Heading, Icon, ProgressBar, Pill } from "..";
 import { RandomPeople } from "../RandomPeople/RandomPeople";
 import styles from "./CategoryCard.module.css";
+import { Colors } from "@/app/constants/colors";
+
+const CategoryColors = {
+  'books': Colors.BLUE,
+  'email': Colors.ORANGE,
+  'work': Colors.VIOLET,
+  'urgent': Colors.GREEN,
+}
 
 type Props = {
   icon?: string;
@@ -17,15 +25,9 @@ const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
   return (
     <Container className={styles.wrapper}>
       <div className={styles["header-container"]}>
-        <div className={css(styles['colored-till'], { 
-          [styles['books-colored-till']]: category === 'books',
-          [styles['work-colored-till']]: category === 'work',
-          [styles['urgent-colored-till']]: category === 'urgent',
-          [styles['email-colored-till']]: category === 'email',
-        })}>
+        <Pill color={CategoryColors[category]}>
           <Icon name={category} width={14} height={14} />
-        </div>
-
+        </Pill>
 
         <div className={styles["avatars-container"]}>
           <RandomPeople style={{ transform: "translateX(40%)", zIndex: 2 }} />
@@ -41,15 +43,9 @@ const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
       <div className={styles.footer}>
         <ProgressBar progress={isCompleted ? 100 : average} className={styles['progress-bar']} color={color} />
 
-        <div className={css(styles['colored-till'], { 
-          [styles['books-colored-till']]: category === 'books',
-          [styles['work-colored-till']]: category === 'work',
-          [styles['urgent-colored-till']]: category === 'urgent',
-          [styles['email-colored-till']]: category === 'email',
-        })}>
+        <Pill color={CategoryColors[category]}>
           <small className={styles.footer__percentage}>{tasks.completed} / {tasks.total}</small>
-        </div>
-
+        </Pill>
       </div>
     </Container>
   );

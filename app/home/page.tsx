@@ -1,6 +1,7 @@
 import css from "classnames";
-import { Button, Header, Heading, Layout, DailyCard, CategoryCard, Icon } from "../components";
+import { Button, Header, Heading, Layout, DailyCard, CategoryCard, Icon, Pill } from "../components";
 import styles from "./home.module.css";
+import { Colors } from "../constants/colors";
 
 type Props = {};
 
@@ -38,7 +39,11 @@ const Home = ({}: Props): JSX.Element => {
 
       <nav className={styles.nav}>
         <Icon name="home" />
-        <Icon name="plus" />
+
+        <Pill color={Colors.BLUE} className={styles.plusPill}>
+          <Icon name="plus" />
+        </Pill>
+
         <Icon name="notepad" />
       </nav>
     </Layout>
