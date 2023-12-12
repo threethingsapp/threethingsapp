@@ -1,5 +1,5 @@
 import css from "classnames";
-import { Button, Header, Heading, Layout, DailyCard, CategoryCard } from "../components";
+import { Button, Header, Heading, Layout, DailyCard, CategoryCard, Icon } from "../components";
 import styles from "./home.module.css";
 
 type Props = {};
@@ -35,6 +35,12 @@ const Home = ({}: Props): JSX.Element => {
         <CategoryCard color="rgb(188, 98, 255)" category="work" tasks={{ completed: 4, total: 4 }} />
         <CategoryCard color="rgb(127, 255, 98)" category="urgent" tasks={{ completed: 9, total: 18 }} />
       </div>
+
+      <nav className={styles.nav}>
+        <Icon name="home" />
+        <Icon name="plus" />
+        <Icon name="notepad" />
+      </nav>
     </Layout>
   );
 };

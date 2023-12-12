@@ -6,12 +6,15 @@ enum IconsMap {
   work = "/work.svg",
   urgent = "/urgent.svg",
   email = "/email.svg",
+  plus = "/plus.svg",
+  home = "/home.svg",
+  notepad = "/notepad.svg",
 }
 
 const DEFAULT_SIZE = 24;
 
 type Props = {
-  name: 'search' | 'books' | 'work' | 'urgent' | 'email';
+  name: 'search' | 'books' | 'work' | 'urgent' | 'email' | 'plus' | 'home' | 'notepad';
   height?: number;
   width?: number;
 };
