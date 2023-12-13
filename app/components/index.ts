@@ -3,6 +3,7 @@ export * from './Button';
 export * from './CategoryCard';
 export * from './Container';
 export * from './DailyCard';
+export * from './FooterNav';
 export * from './Header';
 export * from './Heading';
 export * from './Icon';

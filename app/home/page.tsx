@@ -6,11 +6,10 @@ import {
   Layout,
   DailyCard,
   CategoryCard,
-  Icon,
-  Pill,
-} from "../components";
+  FooterNav,
+} from "@/app/components";
+import { Colors } from "@/app/constants";
 import styles from "./home.module.css";
-import { Colors } from "../constants/colors";
 
 type Props = {};
 
@@ -60,21 +59,7 @@ const Home = ({}: Props): JSX.Element => {
         />
       </div>
 
-      <nav className={styles.nav}>
-        <Button theme="clear">
-          <Icon name="home" />
-        </Button>
-
-        <Button theme="clear">
-          <Pill color={Colors.BLUE} className={styles.plusPill}>
-            <Icon name="plus" />
-          </Pill>
-        </Button>
-        
-        <Button theme="clear">
-          <Icon name="notepad" />
-        </Button>
-      </nav>
+      <FooterNav />
     </Layout>
   );
 };
