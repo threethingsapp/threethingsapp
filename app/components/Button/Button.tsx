@@ -4,10 +4,11 @@ import css from "classnames";
 import styles from "./Button.module.css";
 
 type Props = {
-  title: string;
+  title?: string;
   theme?: "primary" | "outline" | "clear" | undefined;
   size?: "normal" | "small" | undefined;
   style?: Record<string, unknown> | undefined;
+  children?: JSX.Element
 };
 
 const Button = ({
@@ -15,6 +16,7 @@ const Button = ({
   theme = "outline",
   size = "normal",
   style,
+  children
 }: Props): JSX.Element => {
   const isSmall = size === 'small';
 
@@ -29,6 +31,7 @@ const Button = ({
         })}
       >
         {title}
+        {children}
       </button>
     </div>
   );

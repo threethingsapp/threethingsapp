@@ -36,13 +36,10 @@
   align-items: center;
 }
 
-.nav > img {
-  flex: 1;
-  justify-content: center;
-}
-
 .plusPill {
-  aspect-ratio: 1/1;
+  width: 40px;
+  margin: 0 auto;
+  aspect-ratio: 1;
   padding: 8px;
   border-radius: 50%;
 }
