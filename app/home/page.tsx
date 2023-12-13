@@ -39,22 +39,22 @@ const Home = ({}: Props): JSX.Element => {
 
       <div className={styles["category-container"]}>
         <CategoryCard
-          color="rgb(30, 144, 255)"
+          color={Colors.BLUE}
           category="books"
           tasks={{ completed: 1, total: 2 }}
         />
         <CategoryCard
-          color="rgb(255, 171, 30)"
+          color={Colors.ORANGE}
           category="email"
           tasks={{ completed: 3, total: 10 }}
         />
         <CategoryCard
-          color="rgb(188, 98, 255)"
+          color={Colors.VIOLET}
           category="work"
           tasks={{ completed: 4, total: 4 }}
         />
         <CategoryCard
-          color="rgb(127, 255, 98)"
+          color={Colors.GREEN}
           category="urgent"
           tasks={{ completed: 9, total: 18 }}
         />
