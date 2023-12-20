@@ -1,25 +1,39 @@
 import Image from "next/image";
 
-type Props = {
-  image?: string | undefined;
+export type AvatarProps = {
+  image?: string | undefined | null;
   className?: string;
+  style?: any;
+  alt?: string;
 };
 
 const DEFAULT_IMAGE = "/avatar.svg";
+const IMAGE_SIZE = "32";
 
-const Avatar = ({ image = DEFAULT_IMAGE, className }: Props): JSX.Element => {
+const Avatar = ({
+  image = DEFAULT_IMAGE,
+  className,
+  style,
+  alt = "alt",
+}: AvatarProps): JSX.Element => {
+  // if I want to set the image throw css I can send a null image.
+  const nulledImage = image === null;
+
+  // if I set the image throw css I need to fix the image size.
+  if (nulledImage) {
+    style = { ...style, width: `${IMAGE_SIZE}px`, height: `${IMAGE_SIZE}px` };
+  }
+
   return (
-    <div>
-      <Image
-        src={image}
-        alt="3d"
-        style={{ margin: "0 auto" }}
-        width={32}
-        height={32}
-        priority
-        className={className}
-      />
-    </div>
+    <Image
+      src={nulledImage ? "" : image ?? DEFAULT_IMAGE}
+      alt={nulledImage ? "" : alt}
+      style={style}
+      width={IMAGE_SIZE}
+      height={IMAGE_SIZE}
+      priority
+      className={className}
+    />
   );
 };
 

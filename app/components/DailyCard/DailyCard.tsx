@@ -1,11 +1,28 @@
 import css from "classnames";
 import { Container, Heading, ProgressBar } from "..";
-import { RandomPeople } from "../RandomPeople/RandomPeople";
 import styles from "./DailyCard.module.css";
+import { AvatarGroup } from "../AvatarGroup";
+import { IMAGE_UTILS } from "@/app/utils";
 
 type Props = {
   className?: string;
 };
+
+
+const images = [
+  { 
+    className: IMAGE_UTILS.getRandomImageStyle(),
+    image: null
+  },
+  { 
+    className: IMAGE_UTILS.getRandomImageStyle(),
+    image: null
+  },
+  { 
+    className: IMAGE_UTILS.getRandomImageStyle(),
+    image: null
+  },
+];
 
 const DailyCard = ({ className }: Props): JSX.Element => {
   return (
@@ -13,11 +30,7 @@ const DailyCard = ({ className }: Props): JSX.Element => {
       <div className={styles['header-container']}>
         <Heading variant="v500">Daily progress</Heading>
 
-        <div className={styles['avatars-container']}>
-          <RandomPeople style={{ transform: 'translateX(80%)', zIndex: 3 }} />
-          <RandomPeople style={{ transform: 'translateX(40%)', zIndex: 2 }} />
-          <RandomPeople style={{ transform: 'translateX(0%)', zIndex: 1 }} />
-        </div>
+        <AvatarGroup images={images} />
       </div>
 
       <small style={{ color: "#c1c1c1ff", marginBottom: "8px" }}>
