@@ -1,20 +1,31 @@
 import Image from "next/image";
 
-enum IconsMap {
-  search = "/search.svg",
-  books = "/books.svg",
-  work = "/work.svg",
-  urgent = "/urgent.svg",
-  email = "/email.svg",
-  plus = "/plus.svg",
-  home = "/home.svg",
-  notepad = "/notepad.svg",
+enum IconNames {
+  Search = 'search',
+  Books = 'books',
+  Work = 'work',
+  Urgent = 'urgent',
+  Email = 'email',
+  Plus = 'plus',
+  Home = 'home',
+  Notepad = 'notepad'
+}
+
+const IconsMap: Record<IconNames, string> = {
+  [IconNames.Search]: "/search.svg",
+  [IconNames.Books]: "/books.svg",
+  [IconNames.Work]: "/work.svg",
+  [IconNames.Urgent]: "/urgent.svg",
+  [IconNames.Email]: "/email.svg",
+  [IconNames.Plus]: "/plus.svg",
+  [IconNames.Home]: "/home.svg",
+  [IconNames.Notepad]: "/notepad.svg",
 }
 
 const DEFAULT_SIZE = 24;
 
 type Props = {
-  name: 'search' | 'books' | 'work' | 'urgent' | 'email' | 'plus' | 'home' | 'notepad';
+  name: IconNames;
   height?: number;
   width?: number;
 };
