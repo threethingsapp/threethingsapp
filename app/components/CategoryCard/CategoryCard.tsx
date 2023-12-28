@@ -3,6 +3,7 @@ import styles from "./CategoryCard.module.css";
 import { Colors } from "@/app/constants/colors";
 import { IMAGE_UTILS } from "@/app/utils";
 import { AvatarGroup } from "../AvatarGroup";
+import { Categories } from "@/app/types";
 
 const CategoryColors = {
   'books': Colors.BLUE,
@@ -14,7 +15,7 @@ const CategoryColors = {
 type Props = {
   icon?: string;
   color?: string;
-  category: 'books' | 'email' | 'work' | 'urgent';
+  category: Categories;
   tasks: Record<'total' | 'completed', number>
 };
 

@@ -10,10 +10,32 @@ import {
 } from "@/app/components";
 import { Colors } from "@/app/constants";
 import styles from "./home.module.css";
+import { Categories } from "../types";
 
-type Props = {};
+const categories = [
+  {
+    color: Colors.BLUE,
+    category: Categories.Books,
+    tasks: { completed: 1, total: 2 },
+  },
+  {
+    color: Colors.ORANGE,
+    category: Categories.Email,
+    tasks: { completed: 3, total: 10 },
+  },
+  {
+    color: Colors.VIOLET,
+    category: Categories.Work,
+    tasks: { completed: 4, total: 4 },
+  },
+  {
+    color: Colors.GREEN,
+    category: Categories.Urgent,
+    tasks: { completed: 9, total: 18 },
+  },
+];
 
-const Home = ({}: Props): JSX.Element => {
+const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
 
   return (
@@ -37,26 +59,14 @@ const Home = ({}: Props): JSX.Element => {
       <Heading variant="v500">Categories</Heading>
 
       <div className={styles["category-container"]}>
-        <CategoryCard
-          color={Colors.BLUE}
-          category="books"
-          tasks={{ completed: 1, total: 2 }}
-        />
-        <CategoryCard
-          color={Colors.ORANGE}
-          category="email"
-          tasks={{ completed: 3, total: 10 }}
-        />
-        <CategoryCard
-          color={Colors.VIOLET}
-          category="work"
-          tasks={{ completed: 4, total: 4 }}
-        />
-        <CategoryCard
-          color={Colors.GREEN}
-          category="urgent"
-          tasks={{ completed: 9, total: 18 }}
-        />
+        {categories.map(({ color, category, tasks }) => (
+          <CategoryCard
+            key={category}
+            color={color}
+            category={category}
+            tasks={tasks}
+          />
+        ))}
       </div>
 
       <FooterNav />
