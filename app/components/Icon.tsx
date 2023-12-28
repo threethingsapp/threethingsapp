@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-enum IconNames {
+export enum IconNames {
   Search = 'search',
   Books = 'books',
   Work = 'work',

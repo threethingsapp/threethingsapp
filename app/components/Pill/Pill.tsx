@@ -4,12 +4,12 @@ import styles from "./Pill.module.css";
 type Props = {
   color: string;
   children: JSX.Element;
-  className?: string;
+  style?: {};
 };
 
-const Pill = ({ color, children, className }: Props): JSX.Element => {
+const Pill = ({ color, children, style }: Props): JSX.Element => {
   return (
-    <div style={{ backgroundColor: color }} className={css(styles['colored-pill'], className)}>
+    <div style={{ backgroundColor: color, ...style }} className={css(styles['colored-pill'])}>
       {children}
     </div>
   )

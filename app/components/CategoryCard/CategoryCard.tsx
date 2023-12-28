@@ -1,9 +1,10 @@
-import { Container, Heading, Icon, ProgressBar, Pill } from "..";
-import styles from "./CategoryCard.module.css";
+import css from "classnames";
+import { Container, Heading, Icon, ProgressBar, Pill, IconNames } from "..";
 import { Colors } from "@/app/constants/colors";
 import { IMAGE_UTILS } from "@/app/utils";
 import { AvatarGroup } from "../AvatarGroup";
-import { Categories } from "@/app/types";
+
+import styles from "./CategoryCard.module.css";
 
 const CategoryColors = {
   'books': Colors.BLUE,
@@ -15,7 +16,7 @@ const CategoryColors = {
 type Props = {
   icon?: string;
   color?: string;
-  category: Categories;
+  category: 'books' | 'email' | 'work' | 'urgent';
   tasks: Record<'total' | 'completed', number>
 };
 
@@ -41,8 +42,8 @@ const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
   return (
     <Container className={styles.wrapper}>
       <div className={styles["header-container"]}>
-        <Pill color={CategoryColors[category]}>
-          <Icon name={category} width={14} height={14} />
+        <Pill color={CategoryColors[category]} style={{ padding: '12px' }}>
+          <Icon name={category as IconNames} width={14} height={14} />
         </Pill>
 
         <AvatarGroup images={images} />

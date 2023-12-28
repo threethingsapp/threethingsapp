@@ -34,10 +34,10 @@ const DailyCard = ({ className }: Props): JSX.Element => {
       </div>
 
       <small style={{ color: "#c1c1c1ff", margin: "6px 0 28px" }}>
-        Here you can see your daily task progress
+        Here you can see your daily task
       </small>
 
-      <ProgressBar progress={76} />
+      <ProgressBar progress={76} showNumbers />
     </Container>
   );
 };
