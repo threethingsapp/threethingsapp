@@ -1,4 +1,4 @@
-import styles from "./RandomPeople.module.css";
+import styles from "./RandomPeople.module.scss";
 import cx from 'classnames';
 
 const getRandomImageStyle = () => {

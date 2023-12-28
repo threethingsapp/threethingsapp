@@ -1,0 +1,39 @@
+@use "sass:math";
+
+$multiplier: 8;
+$image-size: 232 / $multiplier;
+$left-gap: 18 / $multiplier;
+$top-gap: 14 / $multiplier;
+$bg-size: 1024 / $multiplier;
+
+.img {
+  background-image: url("/people.jpg");
+  background-repeat: no-repeat;
+
+  width: #{$image-size}px;
+  height: #{$image-size}px;
+  border-radius: 50%;
+
+  background-size: #{$bg-size}px #{$bg-size}px;
+
+  border: 2px solid rgb(51, 51, 51);
+}
+
+$counter: 1;
+
+@for $row from 1 through 4 {
+  $top-images: $image-size * ($row - 1);
+  $top-gaps: $top-gap * $row * 1.5;
+
+  @for $column from 1 through 4 {
+    $left-images: $image-size * ($column - 1);
+    $left-gaps: $left-gap * $column + $column;
+
+    .img#{$counter} {
+      background-position-x: -#{$left-images + $left-gaps}px;
+      background-position-y: -#{$top-images + $top-gaps}px;
+    }
+
+    $counter: $counter + 1;
+  }
+}
