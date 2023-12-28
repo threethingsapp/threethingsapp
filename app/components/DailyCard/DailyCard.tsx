@@ -28,12 +28,12 @@ const DailyCard = ({ className }: Props): JSX.Element => {
   return (
     <Container height={120} className={css(styles.wrapper, className)}>
       <div className={styles['header-container']}>
-        <Heading variant="v500">Daily progress</Heading>
+        <Heading variant="v500" style={{ alignSelf: 'flex-start' }}>Daily progress</Heading>
 
         <AvatarGroup images={images} />
       </div>
 
-      <small style={{ color: "#c1c1c1ff", marginBottom: "8px" }}>
+      <small style={{ color: "#c1c1c1ff", margin: "6px 0 28px" }}>
         Here you can see your daily task progress
       </small>
 

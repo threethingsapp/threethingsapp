@@ -9,8 +9,9 @@ import {
   FooterNav,
 } from "@/app/components";
 import { Colors } from "@/app/constants";
-import styles from "./home.module.css";
 import { Categories } from "../types";
+
+import styles from "./home.module.css";
 
 const categories = [
   {
@@ -50,7 +51,7 @@ const Home = (): JSX.Element => {
         <Button title="Productivity" size="small" theme="clear" />
       </div>
 
-      <div style={{ height: "140px" }}>
+      <div style={{ height: "190px" }}>
         <DailyCard className={css(styles.card, styles["first-card"])} />
         <DailyCard className={css(styles.card, styles["second-card"])} />
         <DailyCard className={css(styles.card, styles["third-card"])} />

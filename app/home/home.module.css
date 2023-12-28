@@ -1,10 +1,12 @@
 .button-wrapper {
   display: flex;
+  align-items: flex-start;
 }
 
 .card {
   position: relative;
   width: 424px;
+  padding: 18px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
@@ -14,12 +16,12 @@
 
 .second-card {
   z-index: 2;
-  transform: translateY(-110px) scale(.95);
+  transform: translateY(-140px) scale(.95);
 }
 
 .third-card {
   z-index: 1;
-  transform: translateY(-220px) scale(.85);
+  transform: translateY(-280px) scale(.90);
 }
 
 .category-container {
