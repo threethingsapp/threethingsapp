@@ -1,4 +1,4 @@
-import { Avatar, Heading, Icon } from "..";
+import { Avatar, Heading, Icon, IconNames } from "@/app/components";
 import styles from "./Header.module.css";
 
 type Props = {
@@ -11,7 +11,7 @@ const Header = ({ page }: Props): JSX.Element => {
       <Heading variant="v500">{page}</Heading>
 
       <div className={styles["icons-container"]}>
-        <Icon name="search" />
+        <Icon name={IconNames.Search} />
 
         <Avatar />
       </div>
