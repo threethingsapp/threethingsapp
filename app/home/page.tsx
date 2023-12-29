@@ -1,6 +1,7 @@
+"use client"
+
 import css from "classnames";
 import {
-  Button,
   Header,
   Heading,
   Layout,
@@ -9,10 +10,10 @@ import {
   FooterNav,
 } from "@/app/components";
 import { Colors } from "@/app/constants";
-import { Categories } from "../types";
+import { ToggleMenu } from "@/app/components";
+import { Categories } from "@/app/types";
 
 import styles from "./home.module.css";
-import { ToggleMenu } from "../components/ToggleMenu";
 
 const categories = [
   {

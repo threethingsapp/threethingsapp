@@ -10,3 +10,4 @@ export * from './Icon';
 export * from './Layout';
 export * from './Pill';
 export * from './ProgressBar';
+export * from './ToggleMenu';

@@ -1,5 +1,4 @@
-import { Colors } from '@/app/constants/colors';
-import { Button, Icon, Pill } from '@/app/components';
+import { Button, Icon, IconNames } from '@/app/components';
 
 import styles from './FooterNav.module.css';
 
@@ -8,18 +7,16 @@ type Props = {};
 const FooterNav = ({}: Props): JSX.Element => {
   return (
     <nav className={styles.nav}>
-      <Button theme="clear">
-        <Icon name="home" />
+      <Button theme="clear" onClick={() => null}>
+        <Icon name={IconNames.Home} />
       </Button>
 
-      <Button theme="clear">
-        <Pill color={Colors.BLUE} className={styles.plusPill}>
-          <Icon name="plus" />
-        </Pill>
+      <Button theme="primary" onClick={() => null} className={styles.plusPill}>
+        <Icon name={IconNames.Plus} />
       </Button>
 
-      <Button theme="clear">
-        <Icon name="notepad" />
+      <Button theme="clear" onClick={() => null}>
+        <Icon name={IconNames.Notepad} />
       </Button>
     </nav>
   );
