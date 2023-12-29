@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Layout } from "@/app/components";
+import { Button, LoggedLayout } from "@/app/components";
 import { useRouter } from 'next/navigation';
 
 type Props = {};
@@ -12,12 +12,12 @@ const Profile = ({}: Props): JSX.Element => {
   const handleBack = () => router.push('/home');
 
   return (
-    <Layout>
+    <LoggedLayout>
       <h2>Profile</h2>
 
       <Button title="Back" onClick={handleBack} />
-      <Button title="LogOut" onClick={handleLogout} />
-    </Layout>
+      <Button title="LogOut" onClick={handleLogout} theme="clear" />
+    </LoggedLayout>
   )
 };
 

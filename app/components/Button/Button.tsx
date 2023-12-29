@@ -8,7 +8,7 @@ type Props = {
   style?: Record<string, unknown> | undefined;
   className?: {};
   wrapperClassName?: {};
-  children?: JSX.Element
+  children?: JSX.Element;
   onClick: () => void;
 };
 
