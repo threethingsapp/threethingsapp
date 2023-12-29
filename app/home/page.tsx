@@ -9,58 +9,22 @@ import {
   CategoryCard,
   FooterNav,
 } from "@/app/components";
-import { Colors } from "@/app/constants";
 import { ToggleMenu } from "@/app/components";
-import { Categories } from "@/app/types";
+import { MOCKS } from './mocks';
 
 import styles from "./home.module.css";
-
-const categories = [
-  {
-    color: Colors.BLUE,
-    category: Categories.Books,
-    tasks: { completed: 1, total: 2 },
-  },
-  {
-    color: Colors.ORANGE,
-    category: Categories.Email,
-    tasks: { completed: 3, total: 10 },
-  },
-  {
-    color: Colors.VIOLET,
-    category: Categories.Work,
-    tasks: { completed: 4, total: 4 },
-  },
-  {
-    color: Colors.GREEN,
-    category: Categories.Urgent,
-    tasks: { completed: 9, total: 18 },
-  },
-];
-
-const menuOptions = [
-  {
-    id: "overview",
-    title: "Overview",
-    selected: true,
-  },
-  {
-    id: "productivity",
-    title: "Productivity",
-  }
-];
 
 const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
 
   return (
     <Layout>
-      <Header page="home" />
+      <Header page="Home" />
 
-      <Heading variant="v100">Hello</Heading>
-      <Heading variant="v100">{userName}</Heading>
+      <Heading variant="v200">Hello</Heading>
+      <Heading variant="v200">{userName}</Heading>
 
-      <ToggleMenu options={menuOptions} />
+      <ToggleMenu options={MOCKS.menuOptions} />
 
       <div style={{ height: "190px" }}>
         <DailyCard className={css(styles.card, styles["first-card"])} />
@@ -71,12 +35,13 @@ const Home = (): JSX.Element => {
       <Heading variant="v500">Categories</Heading>
 
       <div className={styles["category-container"]}>
-        {categories.map(({ color, category, tasks }) => (
+        {MOCKS.categories.map(({ color, category, tasks, participants }) => (
           <CategoryCard
             key={category}
             color={color}
             category={category}
             tasks={tasks}
+            images={participants}
           />
         ))}
       </div>

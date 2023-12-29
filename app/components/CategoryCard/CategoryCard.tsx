@@ -16,33 +16,22 @@ const CategoryColors = {
 type Props = {
   icon?: string;
   color?: string;
-  category: 'books' | 'email' | 'work' | 'urgent';
-  tasks: Record<'total' | 'completed', number>
+  category: keyof typeof CategoryColors;
+  tasks: Record<'total' | 'completed' | 'new', number>
+  images: {
+    className: string;
+    image?: string | null;
+  }[];
 };
 
-const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
+const CategoryCard = ({ category, tasks, color, images }: Props): JSX.Element => {
   const average = Math.ceil(tasks.completed / tasks.total * 100);
   const isCompleted = tasks.completed === tasks.total;
-
-  const images = [
-    { 
-      className: IMAGE_UTILS.getRandomImageStyle(),
-      image: null
-    },
-    { 
-      className: IMAGE_UTILS.getRandomImageStyle(),
-      image: null
-    },
-    { 
-      className: IMAGE_UTILS.getRandomImageStyle(),
-      image: null
-    },
-  ];
 
   return (
     <Container className={styles.wrapper}>
       <div className={styles["header-container"]}>
-        <Pill color={CategoryColors[category]} style={{ padding: '12px' }}>
+        <Pill color={CategoryColors[category]} style={{ padding: '12px', borderRadius: '12px' }}>
           <Icon name={category as IconNames} width={14} height={14} />
         </Pill>
 
@@ -50,7 +39,7 @@ const CategoryCard = ({ category, tasks, color }: Props): JSX.Element => {
       </div>
 
       <div>
-        <small>{tasks.total - tasks.completed} News</small>
+        <small style={{ color: Colors.GREY }}>{tasks.new} New</small>
         <Heading style={{ textDecoration: 'capitalize' }} variant="v500">{category}</Heading>
       </div>
 
