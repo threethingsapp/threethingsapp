@@ -12,6 +12,7 @@ import { Colors } from "@/app/constants";
 import { Categories } from "../types";
 
 import styles from "./home.module.css";
+import { ToggleMenu } from "../components/ToggleMenu";
 
 const categories = [
   {
@@ -36,6 +37,18 @@ const categories = [
   },
 ];
 
+const menuOptions = [
+  {
+    id: "overview",
+    title: "Overview",
+    selected: true,
+  },
+  {
+    id: "productivity",
+    title: "Productivity",
+  }
+];
+
 const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
 
@@ -46,10 +59,7 @@ const Home = (): JSX.Element => {
       <Heading variant="v100">Hello</Heading>
       <Heading variant="v100">{userName}</Heading>
 
-      <div className={styles["button-wrapper"]}>
-        <Button title="Overview" size="small" theme="primary" />
-        <Button title="Productivity" size="small" theme="clear" />
-      </div>
+      <ToggleMenu options={menuOptions} />
 
       <div style={{ height: "190px" }}>
         <DailyCard className={css(styles.card, styles["first-card"])} />

@@ -6,7 +6,9 @@ type Props = {
   theme?: "primary" | "outline" | "clear" | undefined;
   size?: "normal" | "small" | undefined;
   style?: Record<string, unknown> | undefined;
+  className?: {};
   children?: JSX.Element
+  onClick: () => void;
 };
 
 const Button = ({
@@ -14,19 +16,23 @@ const Button = ({
   theme = "outline",
   size = "normal",
   style,
-  children
+  children,
+  className,
+  onClick
 }: Props): JSX.Element => {
   const isSmall = size === 'small';
 
   return (
-    <div className={css(styles.wrapper)} style={style}>
+    <div className={css(styles.wrapper)}>
       <button
+        style={style}
         className={css(styles.button, {
           [styles["primary-button"]]: theme === "primary",
           [styles["outline-button"]]: theme === "outline",
           [styles["clear-button"]]: theme === "clear",
           [styles['button--small']]: isSmall
-        })}
+        }, className)}
+        onClick={onClick}
       >
         {title}
         {children}
