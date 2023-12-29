@@ -1,0 +1,36 @@
+.wrapper {
+  aspect-ratio: 1;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatars-container {
+  display: flex;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__percentage {
+  display: flex;
+  align-items: flex-end;
+}
+
+.progress-bar {
+  width: 60%;
+}

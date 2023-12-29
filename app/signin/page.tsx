@@ -1,8 +1,5 @@
 import Image from "next/image";
-import css from 'classnames';
-import { Layout } from "../components/Layout";
-import { Heading } from "../components/Heading";
-import { Button } from "../components/Button";
+import { Layout, Heading, Button                                                     } from "../components";
 
 type Props = {};
 

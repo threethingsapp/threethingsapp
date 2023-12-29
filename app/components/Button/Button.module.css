@@ -1,0 +1,35 @@
+.wrapper {
+  border-width: 0;
+  border: unset;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  height: 48px;
+  border-radius: 24px;
+  color: var(--color-light-primary);
+  border: none;
+  cursor: pointer;
+  background-color: unset;
+}
+
+.button--small {
+  height: 32px;
+  border-radius: 16px;
+}
+
+.primary-button {
+  background-color: var(--color-light-blue);
+}
+
+.outline-button {
+  border: 1px solid var(--color-light-gray);
+}
+
+.clear-button {
+  border: unset;
+  width: unset;
+  color: var(--color-light-gray);
+}
