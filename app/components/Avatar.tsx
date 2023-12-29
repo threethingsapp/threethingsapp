@@ -5,23 +5,25 @@ export type AvatarProps = {
   className?: string;
   style?: any;
   alt?: string;
+  imageSize?: number;
 };
 
 const DEFAULT_IMAGE = "/avatar.svg";
-const IMAGE_SIZE = "32";
+const IMAGE_SIZE = 32;
 
 const Avatar = ({
   image = DEFAULT_IMAGE,
   className,
   style,
   alt = "alt",
+  imageSize = IMAGE_SIZE 
 }: AvatarProps): JSX.Element => {
   // if I want to set the image throw css I can send a null image.
   const nulledImage = image === null;
 
   // if I set the image throw css I need to fix the image size.
   if (nulledImage) {
-    style = { ...style, width: `${IMAGE_SIZE}px`, height: `${IMAGE_SIZE}px` };
+    style = { ...style, width: `${imageSize}px`, height: `${imageSize}px` };
   }
 
   return (
@@ -29,8 +31,8 @@ const Avatar = ({
       src={nulledImage ? "" : image ?? DEFAULT_IMAGE}
       alt={nulledImage ? "" : alt}
       style={style}
-      width={IMAGE_SIZE}
-      height={IMAGE_SIZE}
+      width={imageSize}
+      height={imageSize}
       priority
       className={className}
     />

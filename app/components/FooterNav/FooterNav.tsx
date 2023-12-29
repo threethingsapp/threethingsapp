@@ -1,23 +1,35 @@
+"use client";
+
+import css from 'classnames';
+import { useRouter, usePathname } from 'next/navigation';
 import { Button, Icon, IconNames } from '@/app/components';
 
-import styles from './FooterNav.module.css';
+import styles from './Footer.module.css';
+import { FooterButton } from './FooterButton';
 
 type Props = {};
 
 const FooterNav = ({}: Props): JSX.Element => {
+  const router = useRouter();
+  const path = usePathname();
+
   return (
     <nav className={styles.nav}>
-      <Button theme="clear" onClick={() => null}>
-        <Icon name={IconNames.Home} />
-      </Button>
+      <FooterButton
+        route='/home'
+        iconName={IconNames.Home}
+        isSelected={path === '/home'}
+      />
 
-      <Button theme="primary" onClick={() => null} className={styles.plusPill}>
+      <Button theme="primary" onClick={() => router.push('/daily-progress')} className={styles.plusPill}>
         <Icon name={IconNames.Plus} />
       </Button>
 
-      <Button theme="clear" onClick={() => null}>
-        <Icon name={IconNames.Notepad} />
-      </Button>
+      <FooterButton
+        route='/daily-progress'
+        iconName={IconNames.Notepad}
+        isSelected={path === '/daily-progress'}
+      />
     </nav>
   );
 };

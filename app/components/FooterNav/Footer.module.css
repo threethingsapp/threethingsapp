@@ -9,4 +9,15 @@
 .plusPill {
   aspect-ratio: 1;
   border-radius: 50%; 
+  padding: 0;
+}
+
+.selected {
+  width: 4px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background-color: blue;
+  margin: -4px auto 0;
 }

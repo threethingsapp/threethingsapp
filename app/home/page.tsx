@@ -1,13 +1,11 @@
-"use client"
+"use client";
 
 import css from "classnames";
 import {
-  Header,
   Heading,
-  Layout,
+  LoggedLayout,
   DailyCard,
   CategoryCard,
-  FooterNav,
 } from "@/app/components";
 import { ToggleMenu } from "@/app/components";
 import { MOCKS } from './mocks';
@@ -18,9 +16,7 @@ const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
 
   return (
-    <Layout>
-      <Header page="Home" />
-
+    <LoggedLayout>
       <Heading variant="v200">Hello</Heading>
       <Heading variant="v200">{userName}</Heading>
 
@@ -45,9 +41,7 @@ const Home = (): JSX.Element => {
           />
         ))}
       </div>
-
-      <FooterNav />
-    </Layout>
+    </LoggedLayout>
   );
 };
 
