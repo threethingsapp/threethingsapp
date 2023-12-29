@@ -34,28 +34,30 @@ const SignIn = ({}: Props): JSX.Element => {
         The only productivity app you need
       </Heading>
 
-      <Button
-        title="Sign in with Email"
-        theme="primary"
-        wrapperClassName={styles["sso-button"]}
-        className={styles["sso-button"]}
-        onClick={handleNavigation}
-      />
-
-      <div style={{ display: "flex", gap: "18px" }}>
+      <div>
         <Button
+          title="Sign in with Email"
+          theme="primary"
           wrapperClassName={styles["sso-button"]}
           className={styles["sso-button"]}
-          title="Google"
           onClick={handleNavigation}
         />
 
-        <Button
-          wrapperClassName={styles["sso-button"]}
-          className={styles["sso-button"]}
-          title="Apple ID"
-          onClick={handleNavigation}
-        />
+        <div style={{ display: "flex", gap: "18px" }}>
+          <Button
+            wrapperClassName={styles["sso-button"]}
+            className={styles["sso-button"]}
+            title="Google"
+            onClick={handleNavigation}
+          />
+
+          <Button
+            wrapperClassName={styles["sso-button"]}
+            className={styles["sso-button"]}
+            title="Apple ID"
+            onClick={handleNavigation}
+          />
+        </div>
       </div>
 
       <p style={{ textAlign: "center", marginTop: "18px", color: Colors.GREY }}>

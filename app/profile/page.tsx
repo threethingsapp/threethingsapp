@@ -1,7 +1,9 @@
 "use client";
 
-import { Button, LoggedLayout } from "@/app/components";
+import { Avatar, Button, LoggedLayout } from "@/app/components";
 import { useRouter } from 'next/navigation';
+
+import styles from './page.module.scss';
 
 type Props = {};
 
@@ -9,13 +11,11 @@ const Profile = ({}: Props): JSX.Element => {
   const router = useRouter();
 
   const handleLogout = () => router.push('/signin');
-  const handleBack = () => router.push('/home');
 
   return (
     <LoggedLayout>
-      <h2>Profile</h2>
+      <Avatar imageSize={240} className={styles.avatar} />
 
-      <Button title="Back" onClick={handleBack} />
       <Button title="LogOut" onClick={handleLogout} theme="clear" />
     </LoggedLayout>
   )

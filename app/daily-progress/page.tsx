@@ -1,7 +1,7 @@
 "use client";
 
-import { Button, Container, LoggedLayout } from "@/app/components";
-import { useRouter } from "next/navigation";
+import { Container, LoggedLayout } from "@/app/components";
+
 import styles from './page.module.scss';
 
 type Props = {};
@@ -34,15 +34,10 @@ const list = [
 ];
 
 const Profile = ({}: Props): JSX.Element => {
-  const router = useRouter();
-
-  const goToHome = () => router.push("/home");
 
   return (
     <LoggedLayout>
       <h2>Daily Progress</h2>
-
-      <Button title="back" onClick={goToHome} />
 
       <div className={styles['list-wrapper']}>
         {list.map(({ title }, index) => (

@@ -4,7 +4,8 @@ import css from 'classnames';
 import { useRouter, usePathname } from 'next/navigation';
 import { Button, Icon, IconNames } from '@/app/components';
 
-import styles from './FooterNav.module.css';
+import styles from './Footer.module.css';
+import { FooterButton } from './FooterButton';
 
 type Props = {};
 
@@ -14,25 +15,21 @@ const FooterNav = ({}: Props): JSX.Element => {
 
   return (
     <nav className={styles.nav}>
-      <Button theme="clear" onClick={() => router.push('/home')}>
-        <>
-          <Icon name={IconNames.Home} />
-
-          { path === '/home' && <div className={css(styles.selected)}></div>}
-        </>
-      </Button>
+      <FooterButton
+        route='/home'
+        iconName={IconNames.Home}
+        isSelected={path === '/home'}
+      />
 
       <Button theme="primary" onClick={() => router.push('/daily-progress')} className={styles.plusPill}>
         <Icon name={IconNames.Plus} />
       </Button>
 
-      <Button theme="clear" onClick={() => router.push('/daily-progress')}>
-        <>
-          <Icon name={IconNames.Notepad} />
-
-          { path === '/daily-progress' && <div className={css(styles.selected)}></div>}
-        </>
-      </Button>
+      <FooterButton
+        route='/daily-progress'
+        iconName={IconNames.Notepad}
+        isSelected={path === '/daily-progress'}
+      />
     </nav>
   );
 };
