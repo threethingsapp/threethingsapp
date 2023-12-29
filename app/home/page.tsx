@@ -1,6 +1,6 @@
 "use client"
-
 import css from "classnames";
+import { useRouter } from 'next/navigation';
 import {
   Header,
   Heading,
@@ -16,6 +16,7 @@ import styles from "./home.module.css";
 
 const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
+  const router = useRouter();
 
   return (
     <Layout>

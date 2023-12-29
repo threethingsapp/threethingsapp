@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import { Layout, Heading, Button } from "../components";
 import { Colors } from "../constants";
 
@@ -9,6 +10,10 @@ import styles from "./page.module.scss";
 type Props = {};
 
 const SignIn = ({}: Props): JSX.Element => {
+  const router = useRouter();
+
+  const handleNavigation = () => router.push('/home');
+
   return (
     <Layout>
       <div style={{ width: "100%", textAlign: "center" }}>
@@ -34,7 +39,7 @@ const SignIn = ({}: Props): JSX.Element => {
         theme="primary"
         wrapperClassName={styles["sso-button"]}
         className={styles["sso-button"]}
-        onClick={() => null}
+        onClick={handleNavigation}
       />
 
       <div style={{ display: "flex", gap: "18px" }}>
@@ -42,13 +47,14 @@ const SignIn = ({}: Props): JSX.Element => {
           wrapperClassName={styles["sso-button"]}
           className={styles["sso-button"]}
           title="Google"
-          onClick={() => null}
+          onClick={handleNavigation}
         />
+
         <Button
           wrapperClassName={styles["sso-button"]}
           className={styles["sso-button"]}
           title="Apple ID"
-          onClick={() => null}
+          onClick={handleNavigation}
         />
       </div>
 
