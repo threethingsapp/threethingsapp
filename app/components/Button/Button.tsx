@@ -7,6 +7,7 @@ type Props = {
   size?: "normal" | "small" | undefined;
   style?: Record<string, unknown> | undefined;
   className?: {};
+  wrapperClassName?: {};
   children?: JSX.Element
   onClick: () => void;
 };
@@ -18,12 +19,13 @@ const Button = ({
   style,
   children,
   className,
+  wrapperClassName,
   onClick
 }: Props): JSX.Element => {
   const isSmall = size === 'small';
 
   return (
-    <div className={css(styles.wrapper)}>
+    <div className={css(styles.wrapper, wrapperClassName)}>
       <button
         style={style}
         className={css(styles.button, {
