@@ -29,14 +29,14 @@ const Profile = ({}: Props): JSX.Element => {
 
         <small>erlichbachman@piedpipier.com</small>
 
-        <Button title="Edit Profile" onClick={() => null} theme="primary" />
+        <Button title="Edit Profile" onClick={() => null} theme="primary" style={{ padding: '0 42px' }} />
       </div>
 
       <div>
-        <label className={styles.label}>Notification</label>
+        <label className={styles.label}>Notifications</label>
 
         <Container className={styles.container}>
-          <>Turn on Notification</>
+          <>Turn on Notifications</>
           <Switch />
         </Container>
       </div>
