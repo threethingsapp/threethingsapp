@@ -2,17 +2,19 @@ import { ReactElement } from "react";
 import {
   Header,
   Layout,
-  FooterNav
+  FooterNav,
 } from "@/app/components";
 
 type Props = {
   children: ReactElement | ReactElement[];
+  title: string;
+  backButton?: boolean;
 };
 
-const LoggedLayout = ({ children }: Props): JSX.Element => {
+const LoggedLayout = ({ children, title, backButton = false }: Props): JSX.Element => {
   return (
     <Layout>
-      <Header page="Home" />
+      <Header page={title} backButton={backButton} />
 
       <>{children}</>
 
