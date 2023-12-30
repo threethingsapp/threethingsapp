@@ -9,6 +9,7 @@ export * from './Heading';
 export * from './Icon';
 export * from './Input';
 export * from './Layout';
+export * from './Switch';
 export * from './Pill';
 export * from './ProgressBar';
 export * from './ToggleMenu';
