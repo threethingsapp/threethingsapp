@@ -1,12 +1,10 @@
-import css from "classnames";
 import { Container, Heading, Icon, ProgressBar, Pill, IconNames } from "..";
 import { Colors } from "@/app/constants/colors";
-import { IMAGE_UTILS } from "@/app/utils";
 import { AvatarGroup } from "../AvatarGroup";
 
 import styles from "./CategoryCard.module.css";
 
-const CategoryColors = {
+export const CategoryColors = {
   'books': Colors.BLUE,
   'email': Colors.ORANGE,
   'work': Colors.VIOLET,

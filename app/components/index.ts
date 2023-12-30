@@ -7,6 +7,7 @@ export * from './FooterNav';
 export * from './Header';
 export * from './Heading';
 export * from './Icon';
+export * from './Input';
 export * from './Layout';
 export * from './Pill';
 export * from './ProgressBar';

@@ -16,7 +16,7 @@ const Home = (): JSX.Element => {
   const userName = "Erlich Bachman";
 
   return (
-    <LoggedLayout>
+    <LoggedLayout title="Home">
       <Heading variant="v200">Hello</Heading>
       <Heading variant="v200">{userName}</Heading>
 

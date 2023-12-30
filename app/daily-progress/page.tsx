@@ -1,50 +1,97 @@
 "use client";
 
-import { Container, LoggedLayout } from "@/app/components";
+import css from 'classnames';
+import {
+  CategoryColors,
+  Container,
+  Icon,
+  IconNames,
+  LoggedLayout,
+  Pill,
+  Button,
+  ToggleMenu,
+  Input,
+} from "@/app/components";
+import { Categories } from "../types";
 
-import styles from './page.module.scss';
+import styles from "./page.module.scss";
 
 type Props = {};
 
-const list = [
+type ListType = {
+  category: Categories;
+  title: string;
+  selected?: boolean;
+}[];
+
+const list: ListType = [
   {
-    title: "Sausis",
+    category: Categories.Books,
+    title: 'Read "The Lean Startup"',
+    selected: true,
   },
   {
-    title: "Sausis",
+    category: Categories.Urgent,
+    title: "Fix landing page",
+    selected: true,
   },
   {
-    title: "Sausis",
+    category: Categories.Work,
+    title: "Share prototype with team",
+    selected: true,
   },
   {
-    title: "Sausis",
+    category: Categories.Email,
+    title: "Reply to Richard",
   },
   {
-    title: "Sausis",
-  },
-  {
-    title: "Sausis",
-  },
-  {
-    title: "Sausis",
-  },
-  {
-    title: "Sausis",
+    category: Categories.Work,
+    title: "Finalize pitch deck",
   },
 ];
 
+const CategoryIcons = {
+  books: IconNames.Books,
+  email: IconNames.Email,
+  work: IconNames.Work,
+  urgent: IconNames.Urgent,
+};
+
 const Profile = ({}: Props): JSX.Element => {
-
   return (
-    <LoggedLayout>
-      <h2>Daily Progress</h2>
+    <LoggedLayout title="Daily Progress" backButton>
+      <div className={styles.container}>
+        <div>
+          <Input placeholder="Search" />
 
-      <div className={styles['list-wrapper']}>
-        {list.map(({ title }, index) => (
-          <Container key={index}>
-            <>{title}</>
-          </Container>
-        ))}
+          <ToggleMenu
+            options={[
+              { title: "All", id: "all", selected: true },
+              { title: "Favorites", id: "favorites" },
+            ]}
+          />
+        </div>
+
+        <div className={styles["list-wrapper"]}>
+          {list.map(({ category, title, selected }, index) => (
+            <Container key={index} className={css(styles.wrapper, { [styles['selected']]: selected })}>
+              <div className={styles.wrapper}>
+                <Pill
+                  color={CategoryColors[category]}
+                  style={{ padding: "12px", borderRadius: "12px" }}
+                >
+                  <Icon name={CategoryIcons[category]} width={14} height={14} />
+                </Pill>
+
+                {title}
+              </div>
+
+              <Button onClick={() => null} theme="clear" style={{ padding: 4 }}>
+                <Icon name={IconNames.Chevron} />
+              </Button>
+            </Container>
+          ))}
+        </div>
       </div>
     </LoggedLayout>
   );

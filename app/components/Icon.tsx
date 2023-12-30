@@ -8,7 +8,8 @@ export enum IconNames {
   Email = 'email',
   Plus = 'plus',
   Home = 'home',
-  Notepad = 'notepad'
+  Notepad = 'notepad',
+  Chevron = 'chevron'
 }
 
 const IconsMap: Record<IconNames, string> = {
@@ -20,6 +21,7 @@ const IconsMap: Record<IconNames, string> = {
   [IconNames.Plus]: "/plus.svg",
   [IconNames.Home]: "/home.svg",
   [IconNames.Notepad]: "/notepad.svg",
+  [IconNames.Chevron]: "/chevron.svg",
 }
 
 const DEFAULT_SIZE = 24;
