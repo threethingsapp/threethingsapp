@@ -6,6 +6,7 @@ import {
   Container,
   Heading,
   LoggedLayout,
+  Switch,
 } from "@/app/components";
 import { useRouter } from "next/navigation";
 
@@ -21,19 +22,22 @@ const Profile = ({}: Props): JSX.Element => {
   const userName = "Erlich Bachman";
   return (
     <LoggedLayout>
-      <Avatar imageSize={240} className={styles.avatar} />
+      <Avatar imageSize={180} className={styles.avatar} />
 
       <div style={{ textAlign: "center" }}>
         <Heading variant="v200">{userName}</Heading>
-        <small>erlichbachman@piedpipier.com</small>
-      </div>
 
-      <Button title="Edit Profile" onClick={() => null} theme="primary" />
+        <small>erlichbachman@piedpipier.com</small>
+
+        <Button title="Edit Profile" onClick={() => null} theme="primary" />
+      </div>
 
       <div>
         <label className={styles.label}>Notification</label>
+
         <Container className={styles.container}>
-          <>Turn on Notification (O)</>
+          <>Turn on Notification</>
+          <Switch />
         </Container>
       </div>
 
@@ -46,7 +50,8 @@ const Profile = ({}: Props): JSX.Element => {
               title="invite"
               theme="primary"
               onClick={() => null}
-              style={{ margin: "0 24px" }}
+              style={{ padding: "0 32px" }}
+              size="small"
             />
           </>
         </Container>
