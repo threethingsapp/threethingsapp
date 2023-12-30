@@ -1,5 +1,6 @@
 "use client";
 
+import css from 'classnames';
 import {
   CategoryColors,
   Container,
@@ -11,8 +12,8 @@ import {
   ToggleMenu,
   Input,
 } from "@/app/components";
-
 import { Categories } from "../types";
+
 import styles from "./page.module.scss";
 
 type Props = {};
@@ -20,20 +21,24 @@ type Props = {};
 type ListType = {
   category: Categories;
   title: string;
+  selected?: boolean;
 }[];
 
 const list: ListType = [
   {
     category: Categories.Books,
     title: 'Read "The Lean Startup"',
+    selected: true,
   },
   {
     category: Categories.Urgent,
     title: "Fix landing page",
+    selected: true,
   },
   {
     category: Categories.Work,
     title: "Share prototype with team",
+    selected: true,
   },
   {
     category: Categories.Urgent,
@@ -68,8 +73,8 @@ const Profile = ({}: Props): JSX.Element => {
         </div>
 
         <div className={styles["list-wrapper"]}>
-          {list.map(({ category, title }, index) => (
-            <Container key={index} className={styles.wrapper}>
+          {list.map(({ category, title, selected }, index) => (
+            <Container key={index} className={css(styles.wrapper, { [styles['selected']]: selected })}>
               <div className={styles.wrapper}>
                 <Pill
                   color={CategoryColors[category]}
