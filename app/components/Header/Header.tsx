@@ -23,7 +23,7 @@ const Header = ({ page, backButton }: Props): JSX.Element => {
       <div className={styles["icons-container"]}>
         <Icon name={IconNames.Search} />
 
-        <Button theme="clear" onClick={() => router.push("/profile")}>
+        <Button theme="clear" onClick={() => router.push("/profile")} style={{ padding: 0 }}>
           <Avatar />
         </Button>
       </div>

@@ -41,7 +41,7 @@ const list: ListType = [
     selected: true,
   },
   {
-    category: Categories.Urgent,
+    category: Categories.Email,
     title: "Reply to Richard",
   },
   {
@@ -52,9 +52,9 @@ const list: ListType = [
 
 const CategoryIcons = {
   books: IconNames.Books,
-  email: IconNames.Urgent,
+  email: IconNames.Email,
   work: IconNames.Work,
-  urgent: IconNames.Email,
+  urgent: IconNames.Urgent,
 };
 
 const Profile = ({}: Props): JSX.Element => {
