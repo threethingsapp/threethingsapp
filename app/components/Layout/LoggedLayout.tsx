@@ -7,14 +7,14 @@ import {
 
 type Props = {
   children: ReactElement | ReactElement[];
-  title: string;
+  title?: string;
   backButton?: boolean;
 };
 
 const LoggedLayout = ({ children, title, backButton = false }: Props): JSX.Element => {
   return (
     <Layout>
-      <Header page={title} backButton={backButton} />
+      <>{title && <Header page={title} backButton={backButton} />}</>
 
       <>{children}</>
 
