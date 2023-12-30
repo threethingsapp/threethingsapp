@@ -1,14 +1,25 @@
+$padding: 2px;
+$wrapper-size: 42px;
+$knob-size: ($wrapper-size / 2) - $padding;
+
 .wrapper {
+  display: flex;
+
+  width: $wrapper-size;
+
   background-color: gray;
+  cursor: pointer;
   border-radius: 24px;
-  height: 24px;
-  width: 48px;
-  padding: 2px;
+  padding: $padding;
 }
 
 .knob {
   background-color: white;
-  width: 20px;
+  width: $knob-size;
   aspect-ratio: 1;
   border-radius: 50%;
+}
+
+.selected {
+  justify-content: flex-end;
 }
