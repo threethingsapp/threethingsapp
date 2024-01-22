@@ -17,7 +17,7 @@ type Props = {
   category: keyof typeof CategoryColors;
   tasks: Record<'total' | 'completed' | 'new', number>
   images: {
-    className: string;
+    className?: string;
     image?: string | null;
   }[];
 };
