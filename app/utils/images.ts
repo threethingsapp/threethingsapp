@@ -1,5 +1,5 @@
-import styles from "./RandomPeople.module.scss";
 import cx from 'classnames';
+import styles from "./RandomPeople.module.scss";
 
 const getRandomImageStyle = () => {
   const rand = Math.floor(Math.random() * 16);

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export type AvatarProps = {
@@ -26,10 +28,19 @@ const Avatar = ({
     style = { ...style, width: `${imageSize}px`, height: `${imageSize}px` };
   }
 
+  if(nulledImage) {
+    return (
+      <div
+        style={style}
+        className={className}
+      />
+    )
+  }
+
   return (
     <Image
-      src={nulledImage ? "" : image ?? DEFAULT_IMAGE}
-      alt={nulledImage ? "" : alt}
+      src={image ?? DEFAULT_IMAGE}
+      alt={alt}
       style={style}
       width={imageSize}
       height={imageSize}
