@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@/app/components";
 import type { AvatarProps } from "@/app/components";
 
@@ -7,7 +9,7 @@ type Props = {
 
 const AvatarGroup = ({ images }: Props): JSX.Element => {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       {images?.map(({ className, image }, index) => {
         const factor = images.length - index - 1;
 
